@@ -35,4 +35,5 @@ body, html {
     z-index: 6;
     position: relative;
     padding: 10px 20px;
+    width: 200px;
 }
