@@ -12,6 +12,10 @@ function direction() {
 }
 
 function changeArrow(direction) {
+    leftArrow.style.transition = "";
+    leftArrow.style.opacity = 0;
+    rightArrow.style.transition = "";
+    leftArrow.style.opacity = 0;
     clearTimeout(action);
     if (direction === 'left') {
         fade(leftArrow, rightArrow);
@@ -21,12 +25,12 @@ function changeArrow(direction) {
 }
 
 function fade(el1, el2) {
-    fadeIn(el1, 1);
+    fadeIn(el1, .6);
     fadeOut(mainDiv, .5);
     fadeOut(el2, .1);
     action = setTimeout(function () {
-        fadeOut(el1, 1);
-        fadeIn(mainDiv, 1);
+        fadeOut(el1, .6);
+        fadeIn(mainDiv, .7);
     }, 1500);
 }
 
