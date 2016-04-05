@@ -8,14 +8,10 @@ document.getElementById('wrapper').onclick = function () {
 };
 
 function direction() {
-    return ['left', 'right'][Math.floor(Math.random() * 2)];
+    return ['left', 'right'][Math.floor(window.crypto.getRandomValues(new Uint8Array(1)) / 255 * 2)];
 }
 
 function changeArrow(direction) {
-    leftArrow.style.transition = "";
-    leftArrow.style.opacity = 0;
-    rightArrow.style.transition = "";
-    leftArrow.style.opacity = 0;
     clearTimeout(action);
     if (direction === 'left') {
         fade(leftArrow, rightArrow);
@@ -25,6 +21,8 @@ function changeArrow(direction) {
 }
 
 function fade(el1, el2) {
+    fadeOut(el1, 0);
+    fadeOut(el2, 0);
     fadeIn(el1, .6);
     fadeOut(mainDiv, .5);
     fadeOut(el2, .1);
