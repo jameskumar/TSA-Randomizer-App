@@ -8,7 +8,7 @@ document.getElementById('wrapper').onclick = function () {
 };
 
 function direction() {
-    return ['left', 'right'][Math.floor(window.crypto.getRandomValues(new Uint8Array(1)) / 255 * 2)];
+    return ['left', 'right'][Math.floor(Math.random() * 2)];
 }
 
 function changeArrow(direction) {
